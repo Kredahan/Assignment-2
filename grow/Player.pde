@@ -12,34 +12,34 @@ What the Player class needs:
 -Method to prevent the player from exiting the arena
 -Banter (srs)
 */
-
-
-
-
-
-
-
 class Player
 {
   float xLocation;
   float yLocation;
+  float smoothness;
   float pSize;
   
   Player()
   {
-    xLocation = width/2;
-    yLocation = height/2;
+    xLocation = mouseX;
+    yLocation = mouseY;
+    smoothness = 0.05;
     pSize = 150;
     
   }
   
   void display()
   {
-    shape(hero);
+    float targetX = mouseX;
+    float dx = targetX - xLocation;
+    xLocation += dx * smoothness;
+  
+    float targetY = mouseY;
+    float dy = targetY - yLocation;
+    yLocation += dy * smoothness;
      // early days...
+    shape(hero,xLocation,yLocation,pSize,pSize);
   }
-  
-  
   
   
 }

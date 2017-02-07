@@ -59,9 +59,6 @@ void draw()
   hero.vertex(310,490);
   
   hero.endContour();
-  
-  
-  
   hero.endShape(CLOSE);
   
   // Creating the enemy Shape
@@ -106,9 +103,8 @@ void draw()
 
   enemy.endShape(CLOSE); // ending the construction of the enemy shape
   
-  
-  enemy1.display();
   player.display();
+  enemy1.display();
 }
 
 
