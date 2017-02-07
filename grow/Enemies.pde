@@ -31,4 +31,12 @@ class Enemies
 
   }
   
+  void collision()
+  {
+    if( (eLocation.x == player.xLocation) && (eLocation.y == player.yLocation))
+    {
+      player.pSize = player.pSize + (eLocation.x/2);
+    }
+    
+  }
 }
