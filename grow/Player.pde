@@ -18,6 +18,7 @@ class Player
   float yLocation;
   float smoothness;
   float pSize;
+  float pradius;
   
   Player()
   {

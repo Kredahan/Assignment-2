@@ -6,12 +6,14 @@ class Enemies
   PVector eLocation; //Enemy Location
   PVector eVelocity; //Enemy Velocity
   float eSize;       //Enemy Size
+  float eradius;
   
   Enemies()
   {                         //X Coordinate - Y Coordinate
     eLocation = new PVector(random(10,790),random(10,790));
     eVelocity = new PVector(1,2.5);
     eSize = random(100,200);
+    
   }
   
   void display()
@@ -31,12 +33,5 @@ class Enemies
 
   }
   
-  void collision()
-  {
-    if( (eLocation.x == player.xLocation) && (eLocation.y == player.yLocation))
-    {
-      player.pSize = player.pSize + (eLocation.x/2);
-    }
-    
-  }
+ 
 }

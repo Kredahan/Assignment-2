@@ -1,6 +1,7 @@
 
 //Assignment 2 : Katamari Damacy Inspired 2d Game
 Enemies[] enemyarr;
+Enemies hit;
 Player player;
 
 PImage bg;
@@ -12,6 +13,7 @@ void setup()
  size(800,800); 
  bg = loadImage("dark_texture2.jpg");
  enemyarr = new Enemies[10];
+ hit = new Enemies();
  player = new Player();
  
  for(int i = 0;i < 10; i++)
@@ -112,10 +114,14 @@ void draw()
   enemy.endShape(CLOSE); // ending the construction of the enemy shape
   
   player.display();
+  player.pradius = player.pSize/2;
   for(int i = 0; i<10;i++)
   {
+    enemyarr[i].eradius = enemyarr[i].eSize/2;
     enemyarr[i].display();
   }
+  
+  collision();
 }
 
 void drawGrid()
@@ -131,3 +137,27 @@ void drawGrid()
    line(0,w,width ,w);
  }
 }
+
+ void collision()
+  {
+    for(int i=0;i<10;i++)
+    {
+      Enemies hit = enemyarr[i];
+      
+      float dx = player.xLocation - hit.eLocation.x;
+      float dy = player.yLocation - hit.eLocation.x;
+      float d = sqrt(sq(dx)+sq(dy)); // distance between balls
+      
+      if(d<hit.eradius + player.pradius)
+      {
+        enemyarr[i].eLocation.x = random(10,790);
+        enemyarr[i].eLocation.y = random(10,790);
+        enemyarr[i].eSize = random(50,300);
+        
+      }
+
+      
+      
+    }
+    
+  }
