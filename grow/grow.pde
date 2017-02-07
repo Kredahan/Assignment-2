@@ -7,6 +7,7 @@ Player player;
 PImage bg;
 PShape hero;
 PShape enemy;
+float score = 0;
 
 void setup()
 {
@@ -117,7 +118,7 @@ void draw()
   player.pradius = player.pSize/2;
   for(int i = 0; i<10;i++)
   {
-    enemyarr[i].eradius = enemyarr[i].eSize/2;
+    enemyarr[i].eradius = enemyarr[i].eSize/4;
     enemyarr[i].display();
   }
   
