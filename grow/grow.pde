@@ -159,9 +159,9 @@ void drawGrid()
         
       }*/
       
-      for (int i = 0; i >= 10; i--)
+      for(int i=0;i<10;i++)
       {
-          if ( dist( enemyarr[i].eLocation.x, enemyarr[i].eLocation.y, player.xLocation, player.yLocation) < 50)
+          if( dist( enemyarr[i].eLocation.x, enemyarr[i].eLocation.y, player.xLocation, player.yLocation) < 50)
           {
               score = score + enemyarr[i].eSize;
               enemyarr[i].eLocation.x = random(10,790);
