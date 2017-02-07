@@ -1,6 +1,6 @@
 
 //Assignment 2 : Katamari Damacy Inspired 2d Game
-Enemies enemy1;
+Enemies[] enemyarr;
 Player player;
 
 PShape hero;
@@ -9,8 +9,13 @@ PShape enemy;
 void setup()
 {
  size(800,800); 
- enemy1 = new Enemies();
+ enemyarr = new Enemies[10];
  player = new Player();
+ 
+ for(int i = 0;i < 10; i++)
+ {
+   enemyarr[i] = new Enemies();
+ }
   
 }
 
@@ -104,7 +109,10 @@ void draw()
   enemy.endShape(CLOSE); // ending the construction of the enemy shape
   
   player.display();
-  enemy1.display();
+  for(int i = 0; i<10;i++)
+  {
+    enemyarr[i].display();
+  }
 }
 
 
