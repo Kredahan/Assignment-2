@@ -18,8 +18,12 @@ class Enemies
   
   void display()
   {
-      shapeMode(CENTER);
-      shape(enemy,eLocation.x,eLocation.y,eSize,eSize);
+      /*shapeMode(CENTER);
+      shape(enemy,eLocation.x,eLocation.y,eSize,eSize);*/
+      strokeWeight(2);
+      stroke(0);
+      fill(255);
+      ellipse(eLocation.x,eLocation.y,eSize,eSize);
       eLocation.add(eVelocity);
       
        if ((eLocation.x > width -50 ) || (eLocation.x < - 20 )) //The area being rendered was causing issues with the width and height usage, either that or my knoledge of pshapes is lacking and it was causing a problem when I scaled the shape down

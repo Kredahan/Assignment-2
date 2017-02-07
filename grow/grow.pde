@@ -141,7 +141,7 @@ void drawGrid()
 
  void collision()
   {
-    for(int i=0;i<10;i++)
+    /*for(int i=0;i<10;i++)
     {
       Enemies hit = enemyarr[i];
       
@@ -151,14 +151,25 @@ void drawGrid()
       
       if(d<hit.eradius + player.pradius)
       {
+        score = score + enemyarr[i].eSize;
         enemyarr[i].eLocation.x = random(10,790);
         enemyarr[i].eLocation.y = random(10,790);
         enemyarr[i].eSize = random(50,300);
         
+        
+      }*/
+      
+      for (int i = 0; i >= 10; i--)
+      {
+          if ( dist( enemyarr[i].eLocation.x, enemyarr[i].eLocation.y, player.xLocation, player.yLocation) < 50)
+          {
+              score = score + enemyarr[i].eSize;
+              enemyarr[i].eLocation.x = random(10,790);
+              enemyarr[i].eLocation.y = random(10,790);
+              enemyarr[i].eSize = random(50,300);
+          }
       }
 
       
       
     }
-    
-  }

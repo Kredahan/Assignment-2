@@ -39,8 +39,11 @@ class Player
     float dy = targetY - yLocation;
     yLocation += dy * smoothness;
      // early days...
-    shapeMode(CENTER);
-    shape(hero,xLocation,yLocation,pSize,pSize);
+    /*shapeMode(CENTER);
+    shape(hero,xLocation,yLocation,pSize,pSize);*/
+    stroke(255);
+    fill(0);
+    ellipse(xLocation,yLocation,pSize,pSize);
   }
   
   
