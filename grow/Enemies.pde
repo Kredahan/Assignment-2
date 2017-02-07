@@ -20,11 +20,11 @@ class Enemies
       shape(enemy,eLocation.x,eLocation.y,eSize,eSize);
       eLocation.add(eVelocity);
       
-       if ((eLocation.x > width /*- 120*/) || (eLocation.x < 0 /*- 90*/)) //The area being rendered was causing issues with the width and height usage, either that or my knoledge of pshapes is lacking and it was causing a problem when I scaled the shape down
+       if ((eLocation.x > width -50 ) || (eLocation.x < - 20 )) //The area being rendered was causing issues with the width and height usage, either that or my knoledge of pshapes is lacking and it was causing a problem when I scaled the shape down
        {
           eVelocity.x = eVelocity.x * -1;
         }
-      if ((eLocation.y > height /*- 120*/ ) || (eLocation.y < 0 /*- 90*/)) 
+      if ((eLocation.y > height -50 ) || (eLocation.y < - 20 )) 
       {
           eVelocity.y = eVelocity.y * -1;
       }
