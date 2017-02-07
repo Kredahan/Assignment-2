@@ -20,11 +20,47 @@ void draw()
   
   hero = createShape();
   hero.beginShape();
-  hero.fill(102);
+  hero.fill(41,85,99);
   hero.stroke(255);
   hero.strokeWeight(2);
-  // Drawing the enemy shape (skull)
+  // Drawing the player shape
   hero.vertex(300,520);
+  hero.vertex(400,520);
+  hero.vertex(460,450);
+  hero.vertex(465,390);
+  hero.vertex(460,360);
+  hero.vertex(420,325);
+  hero.vertex(400,320);
+  hero.vertex(350,315);
+  hero.vertex(300,320);
+  hero.vertex(280,325);
+  hero.vertex(240,360);
+  hero.vertex(235,390);
+  hero.vertex(240,450);
+  
+  hero.beginContour(); //cutting out the left eye
+  hero.vertex(280,420);
+  hero.vertex(310,420);
+  hero.vertex(310,450);
+  hero.vertex(280,450);
+  hero.endContour();
+  
+  hero.beginContour(); //cutting out the right eye
+  hero.vertex(390,420);
+  hero.vertex(420,420);
+  hero.vertex(420,450);
+  hero.vertex(390,450);
+  hero.endContour();
+  
+  hero.beginContour();//cutting out the mouth
+  hero.vertex(310,480);
+  hero.vertex(390,480);
+  hero.vertex(390,490);
+  hero.vertex(310,490);
+  
+  hero.endContour();
+  
+  
   
   hero.endShape(CLOSE);
   
@@ -69,6 +105,7 @@ void draw()
   enemy.endContour();
 
   enemy.endShape(CLOSE); // ending the construction of the enemy shape
+  
   
   enemy1.display();
   player.display();
