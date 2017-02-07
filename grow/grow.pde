@@ -3,12 +3,14 @@
 Enemies[] enemyarr;
 Player player;
 
+PImage bg;
 PShape hero;
 PShape enemy;
 
 void setup()
 {
  size(800,800); 
+ bg = loadImage("dark_texture.jpg");
  enemyarr = new Enemies[10];
  player = new Player();
  
@@ -21,7 +23,8 @@ void setup()
 
 void draw()
 {
-  background(0);
+  image(bg,0 ,0 ,width,height);
+  drawGrid();
   
   hero = createShape();
   hero.beginShape();
@@ -115,28 +118,16 @@ void draw()
   }
 }
 
-
-void keyPressed()
+void drawGrid()
 {
-  if(key == 'w')
+  for(int i=0; i<width - 50; i+=80)
   {
-    
+   stroke(138,43,226,140);
+   line(i,0,i,height);
   }
-  
-  if(key == 'a')
-  {
-    
-  }
-  
-  if(key == 'd')
-  {
-   
-  }
-  
-  if(key == 's')
-  {
-    
-  }
-  
-  
+ for(int w=0; w<height - 50; w+=80) 
+ {
+   stroke(138,43,226,140);
+   line(0,w,width ,w);
+ }
 }

@@ -10,7 +10,7 @@ class Enemies
   Enemies()
   {                         //X Coordinate - Y Coordinate
     eLocation = new PVector(random(10,790),random(10,790));
-    eVelocity = new PVector(2.5,5);
+    eVelocity = new PVector(1,2.5);
     eSize = random(100,200);
   }
   
