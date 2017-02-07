@@ -10,7 +10,7 @@ PShape enemy;
 void setup()
 {
  size(800,800); 
- bg = loadImage("dark_texture.jpg");
+ bg = loadImage("dark_texture2.jpg");
  enemyarr = new Enemies[10];
  player = new Player();
  
@@ -23,7 +23,7 @@ void setup()
 
 void draw()
 {
-  image(bg,0 ,0 ,width,height);
+  background(bg);
   drawGrid();
   
   hero = createShape();
