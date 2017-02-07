@@ -35,7 +35,7 @@ class Player
   
   void display()
   {
-    fill(255);
+    fill(255,255,255,0);
     rect(xLocation,yLocation,pSize,pSize); // early days...
   }
   

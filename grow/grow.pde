@@ -3,6 +3,7 @@
 Enemies enemy1;
 Player player;
 
+PShape hero;
 PShape enemy;
 
 void setup()
@@ -16,7 +17,16 @@ void setup()
 void draw()
 {
   background(0);
-  fill(255);
+  
+  hero = createShape();
+  hero.beginShape();
+  hero.fill(102);
+  hero.stroke(255);
+  hero.strokeWeight(2);
+  // Drawing the enemy shape (skull)
+  hero.vertex(300,520);
+  
+  hero.endShape(CLOSE);
   
   // Creating the enemy Shape
   enemy = createShape();
@@ -60,8 +70,6 @@ void draw()
 
   enemy.endShape(CLOSE); // ending the construction of the enemy shape
   
-  
-  shape(enemy, 400,400,150,150);
   enemy1.display();
   player.display();
 }
