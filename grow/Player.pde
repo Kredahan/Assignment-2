@@ -46,5 +46,15 @@ class Player
     ellipse(xLocation,yLocation,pSize,pSize);
   }
   
+  void sizeCheck()
+  {
+    if(player.pSize >= 500)
+    {
+      player.pSize = player.pSize - 1350;
+      
+    }
+  
+  }//end main
+  
   
 }

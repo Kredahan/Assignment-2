@@ -145,9 +145,10 @@ void draw()
   weak.display();
   
   
-  
+  player.sizeCheck();
   collision();
-}
+  
+} //end function
 
 void drawGrid()
 {
@@ -161,7 +162,7 @@ void drawGrid()
    stroke(138,43,226,140);
    line(0,w,width ,w);
  }
-}
+} //end function
 
  void collision()
   {
@@ -221,4 +222,7 @@ void drawGrid()
       
       
     }
-    }
+    
+
+  } //end function
+  
