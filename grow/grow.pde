@@ -13,7 +13,7 @@ float score = 0;
 
 void setup()
 {
- size(1000,1000); 
+ size(1200,1000); 
  ard = loadFont("ardestine.vlw");
  bg = loadImage("dark_texture2.jpg");
  enemyarr = new Enemies[10];
