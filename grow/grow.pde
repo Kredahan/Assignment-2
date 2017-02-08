@@ -1,5 +1,5 @@
 
-//Assignment 2 : Katamari Damacy Inspired 2d Game
+//Assignment 2 : Katamari Damacy/Agar io Inspired 2d Game
 Enemies[] enemyarr;
 Enemies hit;
 Player player;
@@ -11,7 +11,7 @@ float score = 0;
 
 void setup()
 {
- size(800,800); 
+ size(1000,1000); 
  bg = loadImage("dark_texture2.jpg");
  enemyarr = new Enemies[10];
  hit = new Enemies();
@@ -26,7 +26,7 @@ void setup()
 
 void draw()
 {
-  background(bg);
+  background(0);
   drawGrid();
   
   
@@ -168,11 +168,14 @@ void drawGrid()
       {
           if( dist( enemyarr[i].eLocation.x, enemyarr[i].eLocation.y, player.xLocation, player.yLocation) < 50)
           {
+            if(player.pSize > enemyarr[i].eSize)
+            {
               player.pSize = player.pSize + ((enemyarr[i].eSize)/10);
               score = score + enemyarr[i].eSize;
               enemyarr[i].eLocation.x = random(10,790);
               enemyarr[i].eLocation.y = random(10,790);
               enemyarr[i].eSize = random(50,300);
+            }
           }
       }
 
