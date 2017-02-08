@@ -2,6 +2,7 @@
 //Assignment 2 : Katamari Damacy/Agar io Inspired 2d Game
 Enemies[] enemyarr;
 Enemies hit;
+Enemies weak;
 Player player;
 
 PFont ard;
@@ -17,12 +18,17 @@ void setup()
  bg = loadImage("dark_texture2.jpg");
  enemyarr = new Enemies[10];
  hit = new Enemies();
+ weak = new Enemies();
  player = new Player();
  
  for(int i = 0;i < 10; i++)
  {
    enemyarr[i] = new Enemies();
  }
+ 
+  weak.eSize = 100;
+  weak.eVelocity.x = 2.5;
+  weak.eVelocity.y = 5;
   
 }
 
@@ -134,6 +140,11 @@ void draw()
     enemyarr[i].eradius = enemyarr[i].eSize/4;
     enemyarr[i].display();
   }
+  
+  //A small instance of the enemy class that stays at a constant size and continues to appear so that if all the enemies generated are too big, the player can always try to catch this one 
+  weak.display();
+  
+  
   
   collision();
 }
