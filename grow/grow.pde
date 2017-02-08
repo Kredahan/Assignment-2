@@ -1,9 +1,12 @@
 
 //Assignment 2 : Katamari Damacy/Agar io Inspired 2d Game
+import ddf.minim.*;
 Enemies[] enemyarr;
 Enemies hit;
 Enemies weak;
 Player player;
+Minim minim;
+AudioPlayer contact;
 
 PFont ard;
 PImage bg;
@@ -15,11 +18,14 @@ void setup()
 {
  size(1200,1000); 
  ard = loadFont("ardestine.vlw");
- bg = loadImage("dark_texture2.jpg");
+ bg = loadImage("dark_texture3.jpg");
  enemyarr = new Enemies[10];
  hit = new Enemies();
  weak = new Enemies();
  player = new Player();
+ 
+ minim = new Minim(this);
+ contact = minim.loadFile("triple.mp3");
  
  for(int i = 0;i < 10; i++)
  {
@@ -36,7 +42,7 @@ void draw()
 {
  
   textFont(ard);
-  background(0);
+  background(bg);
   drawGrid();
   textSize(50);
   fill(255);
@@ -211,6 +217,8 @@ void drawGrid()
           {
              if(player.pSize > weak.eSize)
             {
+              contact.play();
+              contact.rewind();
               player.pSize = player.pSize + ((weak.eSize)/10);
               score = score + weak.eSize;
               weak.eLocation.x = random(10,790);
