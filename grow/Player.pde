@@ -25,7 +25,7 @@ class Player
     xLocation = mouseX;
     yLocation = mouseY;
     smoothness = 0.05;
-    pSize = 150;
+    pSize = 100;
     
   }
   

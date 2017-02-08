@@ -29,6 +29,11 @@ void draw()
   background(bg);
   drawGrid();
   
+  
+  /* I originally planned on using PShapes I made to represent the Player and Enemies but the
+     PShapes were incredibly difficult to get right when it came to their visual representation
+     on screen to match their actual location exactly, making it very difficult to account for 
+     collision regarding objects of different sizes. */
   hero = createShape();
   hero.beginShape();
   hero.fill(41,85,99);
@@ -163,6 +168,7 @@ void drawGrid()
       {
           if( dist( enemyarr[i].eLocation.x, enemyarr[i].eLocation.y, player.xLocation, player.yLocation) < 50)
           {
+              player.pSize = player.pSize + ((enemyarr[i].eSize)/10);
               score = score + enemyarr[i].eSize;
               enemyarr[i].eLocation.x = random(10,790);
               enemyarr[i].eLocation.y = random(10,790);
