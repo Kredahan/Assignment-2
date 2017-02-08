@@ -4,6 +4,7 @@ Enemies[] enemyarr;
 Enemies hit;
 Player player;
 
+PFont ard;
 PImage bg;
 PShape hero;
 PShape enemy;
@@ -12,6 +13,7 @@ float score = 0;
 void setup()
 {
  size(1000,1000); 
+ ard = loadFont("ardestine.vlw");
  bg = loadImage("dark_texture2.jpg");
  enemyarr = new Enemies[10];
  hit = new Enemies();
@@ -26,6 +28,8 @@ void setup()
 
 void draw()
 {
+ 
+  textFont(ard);
   background(0);
   drawGrid();
   textSize(50);
@@ -179,6 +183,12 @@ void drawGrid()
               enemyarr[i].eLocation.x = random(10,790);
               enemyarr[i].eLocation.y = random(10,790);
               enemyarr[i].eSize = random(50,300);
+            }
+            else
+            {
+              player.pSize = 0;
+              delay(1500);
+              exit();
             }
           }
       }
