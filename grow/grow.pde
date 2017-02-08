@@ -203,7 +203,22 @@ void drawGrid()
             }
           }
       }
-
+      
+      for(int i =0; i <1; i++)
+      {
+         if( dist( weak.eLocation.x, weak.eLocation.y, player.xLocation, player.yLocation) < 50)
+          {
+             if(player.pSize > weak.eSize)
+            {
+              player.pSize = player.pSize + ((weak.eSize)/10);
+              score = score + weak.eSize;
+              weak.eLocation.x = random(10,790);
+              weak.eLocation.y = random(10,790);
+            
+          }
+      }
+  
       
       
+    }
     }
