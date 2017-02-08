@@ -28,6 +28,10 @@ void draw()
 {
   background(0);
   drawGrid();
+  textSize(50);
+  fill(255);
+  text("Score: ",600,60);
+  text(score,740,60);
   
   
   /* I originally planned on using PShapes I made to represent the Player and Enemies but the
